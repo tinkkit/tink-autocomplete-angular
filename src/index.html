@@ -9,6 +9,7 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
   <!-- endbower -->
+  <link rel="stylesheet" href="styles/style-me.css" />
 </head>
 <body ng-controller="app">
 <style>
@@ -19,15 +20,23 @@
 	visibility: hidden;
 }
 </style>
-selected: {{selectedValue}} 
-<tink-autocomplete data-tink-highlight-length="2" tink-filter-on="name" ng-model="selectedValue" data-tink-array="data">
-	<span ng-bind-html="tinkArray.name | highlight"></span> - {{tinkArray.age}}
-	<div>
-		
-	nu kan ik dus extra info over een persoon zetten:
-	<br/>{{tinkArray.extra}}
+
+<div class="container">
+	<div class="row margin-top">
+		<div class="col-xs-12 col-sm-10 col-sm-push-1 col-md-8 col-md-push-2 col-lg-6 col-lg-push-3">
+			<p>selected: {{selectedValue}}</p>
+			<tink-autocomplete data-tink-highlight-length="1" tink-filter-on="name" ng-model="selectedValue" data-tink-array="data">
+				<span ng-bind-html="tinkArray.name | highlight"></span> - {{tinkArray.age}}
+				<div>
+					nu kan ik dus extra info over een persoon zetten:
+					<br/>{{tinkArray.extra}}
+				</div>
+			</tink-autocomplete>
+		</div>
 	</div>
-</tink-autocomplete>
+</div>
+
+
 
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>

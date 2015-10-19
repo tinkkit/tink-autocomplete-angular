@@ -1,0 +1,22 @@
+@import "../../bower_components/tink-core/dist/tink/variables";
+@import "../../bower_components/tink-core/dist/tink/functions";
+@import "../../bower_components/tink-core/dist/tink/mixins";
+
+.tinkAutoComplete {
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  margin-top: rem(1);
+
+  > div {
+    border-bottom: 1px solid $input-border;
+    padding: rem(4 12);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    mark {
+      padding: 0;
+    }
+  }
+}
