@@ -19,7 +19,7 @@
       controller:function($scope){
         var ctrl = this;
         ctrl.inputValue = "";
-        
+
         $scope.$watch('tinkArray',function(value){
           ctrl.visibleData = value;
         })
@@ -34,8 +34,8 @@
               return inText > -1;
             }catch(e) {
               return false;
-            }              
-          }          
+            }
+          }
           return false;
         }
 
@@ -63,14 +63,14 @@
 
       var input = element.find('input');
       input.focus(function(){
-        element.find('.tinkAutoComplete').addClass('is-open');
+        element.find('.list-autocomplete').addClass('show');
       })
       input.blur(function(){
-        element.find('.tinkAutoComplete').removeClass('is-open');
+        element.find('.list-autocomplete').removeClass('show');
       })
 
       transclude(function(transcludeEl) {
-        var divTransclude = element.find('.tinkNgRepeatTransclude');
+        var divTransclude = element.find('.list-result-autocomplete');
         divTransclude.append(transcludeEl);
         divTransclude.attr('ng-repeat',"tinkArray in ctrl.visibleData | filter:ctrl.filterValues track by $index");
         var html = divTransclude.html().replace('| highlight','| highlight:ctrl.inputValue');

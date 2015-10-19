@@ -2,13 +2,34 @@
 @import "../../bower_components/tink-core/dist/tink/functions";
 @import "../../bower_components/tink-core/dist/tink/mixins";
 
-.tinkAutoComplete {
-  border: 1px solid $input-border;
-  border-radius: $input-border-radius;
-  margin-top: rem(1);
+@import "extend-fixes";
 
-  > div {
-    border-bottom: 1px solid $input-border;
+
+.autocomplete {
+  position: relative;
+}
+
+.list-autocomplete {
+  @extend .list-unstyled;
+  @extend .card;
+  border-color: $input-border;
+  display: none;
+  left: 0;
+  margin-top: rem(1);
+  max-height: rem(200);
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: rem(35);
+
+  &:empty {
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  > li {
+    @extend .card-body;
+    // border-color: $input-border;
     padding: rem(4 12);
 
     &:last-child {
