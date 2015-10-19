@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     dist: 'dist',
     version: currentversion,
     module: require('./package.json').name,
-    domain: 'tink.autocomplete'
+    domain: 'tink.skeleton'
   };
 
   // Define the configuration for all the tasks
@@ -424,3 +424,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 };
+
