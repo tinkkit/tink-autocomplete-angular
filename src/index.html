@@ -7,14 +7,64 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
+  <style>
+  .highlighted {
+  	color:red;
+  }
+  </style>
   <!-- endbower -->
 </head>
-<body>
-
+<body ng-controller="app">
+selected: {{selectedValue}} 
+<tink-autocomplete data-tink-highlight-length="2" tink-filter-on="name" ng-model="selectedValue" data-tink-array="data">
+	<span ng-bind-html="tinkArray.name | highlight"></span> - {{tinkArray.age}}
+	<div>
+		
+	nu kan ik dus extra info over een persoon zetten:
+	<br/>{{tinkArray.extra}}
+	</div>
+</tink-autocomplete>
 
 <!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 <!-- endbower -->
-
-<script src="scripts/directives/tink-autocomplete-angular.js"></script>
+<script>
+	angular.module('tink.autocomplete',[]).controller('app',function($scope,$timeout){
+		$scope.selectedValue= "";
+		//$scope.data  = ['iets','jens','willem','vincent','tom','patrick','mathias','willy','bram','bert','jordy','martijn','nicolas','rachel','erik','jef','bert'];
+		$scope.data = []
+		$timeout(function() {console.log('done')
+			$scope.data =[{
+				name:'Bert',
+				extra:'some info',
+				age:25
+			},
+			{
+				name:'Tom',
+				extra:'more information',
+				age:20
+			},
+			{
+				name:'Multiple',
+				extra:'Maybe Multiple Selection',
+				age:25
+			},
+			{
+				name:'Generic',
+				extra:'it would be nice to be generic',
+				age:25
+			}];
+		}, 4000);
+	});
+</script>
+<script src="scripts/directives/tink-autocomplete.js"></script>
 </body>
 </html>
