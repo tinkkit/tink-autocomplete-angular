@@ -39,8 +39,9 @@
           return false;
         }
 
-        ctrl.setModelData = function(data){
+        ctrl.setModelData = function($event,data){
           $scope.ngModel = data;
+          ctrl.inputValue = eval('data.'+$scope.tinkFilterOn);
         };
 
         //to see if the value is numeric
@@ -60,7 +61,13 @@
       controllerAs:'ctrl',
       link: function(scope,element,atrr,ctrl,transclude) {
 
-        
+      var input = element.find('input');
+      input.focus(function(){
+        element.find('.tinkAutoComplete').addClass('is-open');
+      })
+      input.blur(function(){
+        element.find('.tinkAutoComplete').removeClass('is-open');
+      })
 
       transclude(function(transcludeEl) {
         var divTransclude = element.find('.tinkNgRepeatTransclude');

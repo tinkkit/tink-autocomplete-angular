@@ -1,7 +1,7 @@
 <div>
 	<input type="text" ng-change="ctrl.inputChange()" ng-model="ctrl.inputValue" id="input-text" placeholder="input[type=&quot;text&quot;]">
-	<div>
-		<div class="tinkNgRepeatTransclude" ng-click="ctrl.setModelData(tinkArray)">
+	<div class="tinkAutoComplete">
+		<div class="tinkNgRepeatTransclude" ng-mousedown="ctrl.setModelData($event,tinkArray)">
 		</div>
 	</div>
 </div>

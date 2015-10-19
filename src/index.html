@@ -8,14 +8,17 @@
   <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />
-  <style>
-  .highlighted {
-  	color:red;
-  }
-  </style>
   <!-- endbower -->
 </head>
 <body ng-controller="app">
+<style>
+.is-open{
+	visibility: visible !important;
+}
+.tinkAutoComplete{
+	visibility: hidden;
+}
+</style>
 selected: {{selectedValue}} 
 <tink-autocomplete data-tink-highlight-length="2" tink-filter-on="name" ng-model="selectedValue" data-tink-array="data">
 	<span ng-bind-html="tinkArray.name | highlight"></span> - {{tinkArray.age}}
@@ -46,6 +49,18 @@ selected: {{selectedValue}}
 				name:'Bert',
 				extra:'some info',
 				age:25
+			},{
+				name:'berta',
+				extra:'lalala bertjeee',
+				age:20
+			},{
+				name:'bianca',
+				extra:'some sdsqs',
+				age:15
+			},{
+				name:'bitina',
+				extra:'some info',
+				age:30
 			},
 			{
 				name:'Tom',
@@ -62,7 +77,7 @@ selected: {{selectedValue}}
 				extra:'it would be nice to be generic',
 				age:25
 			}];
-		}, 4000);
+		}, 0);
 	});
 </script>
 <script src="scripts/directives/tink-autocomplete-angular.js"></script>
