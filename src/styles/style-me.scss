@@ -31,9 +31,21 @@
     @extend .card-body;
     // border-color: $input-border;
     padding: rem(4 12);
+    transition: background $animation-speed linear;
 
     &:last-child {
       border-bottom: none;
+    }
+
+    &:hover {
+      background-color: rgba($black, .05);
+      cursor: pointer;
+    }
+
+    &:active,
+    &.selected {
+      background-color: $link-color;
+      color: $white;
     }
 
     mark {
