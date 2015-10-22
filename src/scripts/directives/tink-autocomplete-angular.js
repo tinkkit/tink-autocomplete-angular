@@ -26,6 +26,17 @@
         ctrl.inputChange = function(){
 
         }
+
+        ctrl.keyUp = function(event){return false;
+
+        }
+
+        ctrl.keyDown = function(event){
+          var keyCode = event.which;
+
+
+        }
+
         ctrl.filterValues = function(data){
           data = eval('data.'+$scope.tinkFilterOn);
           if(data && ctrl.inputValue !== '' && ctrl.inputValue && ctrl.inputValue.length >= $scope.tinkHighlightLength){
@@ -68,6 +79,11 @@
       input.blur(function(){
         element.find('.list-autocomplete').removeClass('show');
       })
+
+      input.keydown(function(evt) {
+        console.log(evt);
+        return ctrl.keyDown(evt);
+      });
 
       transclude(function(transcludeEl) {
         var divTransclude = element.find('.list-result-autocomplete');

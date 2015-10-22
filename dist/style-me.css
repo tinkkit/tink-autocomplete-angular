@@ -1,0 +1,225 @@
+/**
+ * Variables
+ * ----------------------------------------------------------------
+ */
+/**
+ * Grid
+ */
+/**
+ * Scaffolding
+ */
+/**
+ * Type
+ */
+/**
+ * Code
+ */
+/**
+ * Animation
+ */
+/**
+ * Form states and alerts
+ */
+/**
+ * Tables
+ */
+/**
+ * Components - global settings
+ */
+/**
+ * Buttons
+ *
+ * For each of Bootstrap's buttons, define text, background and border color.
+ */
+/**
+ * Forms
+ */
+/**
+ * Z-index, a better implementation
+ *
+ * Use like this:
+ *   z-index: layer("popover");
+ *     where popover is a list item of the default list "$layers" (see below)
+ *   or
+ *   z-index: layer("popover", $other-layers);
+ *     where popover is a list item of a custom list named "$other-layers"
+ *
+ * Current layer list
+ * z-index: -1  // cellar
+ * z-index: 0   // ground
+ * z-index: 1   // base => here's where $layers start
+ *
+ * Complete layer list (for reference, add these to $layers only if needed)
+ * $layers: base, navbar, dropdown, tooltip, navbar-sticky, navbar-fixed, modal-background, modal, popover;
+ */
+/**
+ * Bar component
+ *
+ * Settings for a standard bar
+ */
+/**
+ * Logo
+ */
+/**
+ * Navigation
+ *
+ * Settings for the top navigation and the off-canvas navigation
+ */
+/**
+ * Datepicker
+ *
+ * Settings for both the single as the range datepicker
+ */
+/**
+ * Callout
+ */
+/**
+ * Hit-area-box
+ */
+/**
+ * Navs
+ */
+/**
+ * Tabs
+ */
+/**
+ * Tooltips
+ */
+/**
+ * Popovers
+ */
+/**
+ * Upload
+ */
+/**
+ * Labels
+ */
+/**
+ * Modals
+ */
+/**
+ * Cards
+ */
+/**
+ * Interactive table
+ */
+/**
+ * Table alternative heading
+ */
+/**
+ * Thumbnails
+ */
+/**
+ * Pagination
+ */
+/**
+ * Badges
+ */
+/**
+ * Breadcrumbs
+ */
+/**
+ * Loader
+ */
+/**
+ * Functions
+ * ----------------------------------------------------------------
+ */
+/**
+ * Strip units from any number
+ */
+/**
+ *  Convert pixels to em
+ */
+/**
+ *  Convert pixels to rem
+ */
+/**
+ * Return a space separated list as rem values
+ * e.g. padding: rem(10 20 10 15);
+ */
+/**
+ * Mixins
+ * --------------------------------------------------
+ */
+/**
+ * Arrow mixin
+ * --------------------------------------------------
+ * Arrow
+ * :before is the arrow border
+ * :after is the arrow background
+ */
+/**
+ * Form mixins
+ *
+ */
+.card, .list-autocomplete {
+  border-color: #eaeaea;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.42857rem ; }
+  .card .card-heading, .list-autocomplete .card-heading {
+    color: #333;
+    background-color: #f7f7f7;
+    border-color: #eaeaea; }
+    .card .card-heading + .card-collapse > .card-body, .list-autocomplete .card-heading + .card-collapse > .card-body, .card .card-heading + .list-autocomplete.card-collapse > li, .list-autocomplete .card-heading + .list-autocomplete.card-collapse > li {
+      border-top-color: #eaeaea; }
+    .card .card-heading .badge, .list-autocomplete .card-heading .badge {
+      color: #f7f7f7;
+      background-color: #333; }
+  .card .card-footer + .card-collapse > .card-body, .list-autocomplete .card-footer + .card-collapse > .card-body, .card .card-footer + .list-autocomplete.card-collapse > li, .list-autocomplete .card-footer + .list-autocomplete.card-collapse > li {
+    border-bottom-color: #eaeaea; }
+  .card:not(.accordion-panel), .list-autocomplete:not(.accordion-panel) {
+    border-radius: 3px; }
+  .card > .card-heading, .list-autocomplete > .card-heading {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+
+.card-body, .list-autocomplete > li {
+  border-bottom: 1px solid #eaeaea;
+  padding: 1.14286rem ; }
+  .card-body:before, .list-autocomplete > li:before, .card-body:after, .list-autocomplete > li:after {
+    content: " ";
+    display: table; }
+  .card-body:after, .list-autocomplete > li:after {
+    clear: both; }
+  .card-body:last-child, .list-autocomplete > li:last-child {
+    border-bottom: none; }
+  .card-body.has-no-padding, .list-autocomplete > li.has-no-padding {
+    padding: 0; }
+
+.list-unstyled, .list-autocomplete {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0; }
+
+.autocomplete {
+  position: relative; }
+
+.list-autocomplete {
+  border-color: #bbb;
+  display: none;
+  left: 0;
+  margin-top: 0.07143rem ;
+  max-height: 14.28571rem ;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 2.5rem ; }
+  .list-autocomplete:empty {
+    border-color: transparent;
+    box-shadow: none; }
+  .list-autocomplete > li {
+    padding: 0.28571rem 0.85714rem ;
+    transition: background 0.1s linear; }
+    .list-autocomplete > li:last-child {
+      border-bottom: none; }
+    .list-autocomplete > li:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      cursor: pointer; }
+    .list-autocomplete > li:active, .list-autocomplete > li.selected {
+      background-color: #5fb1d6;
+      color: #fff; }
+    .list-autocomplete > li mark {
+      padding: 0; }

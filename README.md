@@ -1,6 +1,6 @@
 # Tink autocomplete Angular directive
 
-v1.0.0
+v0.0.0
 
 ## What is this repository for?
 

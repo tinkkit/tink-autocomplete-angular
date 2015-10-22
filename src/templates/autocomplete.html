@@ -1,4 +1,5 @@
 <div class="autocomplete">
-	<input type="text" ng-change="ctrl.inputChange()" ng-model="ctrl.inputValue" placeholder="">
-	<ul class="list-autocomplete"><li class="list-result-autocomplete" ng-mousedown="ctrl.setModelData($event,tinkArray)"></li></ul>
+	<input type="text"  ng-keyup="ctrl.keyDown($event)" ng-change="ctrl.inputChange()" ng-model="ctrl.inputValue" placeholder="">
+	<ul class="list-autocomplete" ><li tabindex="0" class="list-result-autocomplete" ng-mousedown="ctrl.setModelData($event,tinkArray)"></li></ul>
 </div>
+
